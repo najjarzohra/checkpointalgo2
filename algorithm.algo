@@ -1,0 +1,186 @@
+
+****************************application*****************************
+ALGORITHM text_analyze
+VAR
+    c : CHAR := '';
+    nb_char : INTEGER := 0;
+    nb_word : INTEGER := 0;
+    nb_vow : INTEGER := 0;
+BEGIN
+    WHILE (c <> '.') DO
+        Read(c);
+        nb_char := nb_char +1;
+        IF (c = 'a' OR c='e' OR c='i' OR c='o' OR c='u' OR c='y') THEN
+            nb_vow := nb_vow +1;
+        END_IF
+
+        IF (c=' ') THEN
+            nb_word := nb_word +1;
+        END_IF
+        
+    END_WHILE
+
+    Write("The length of the sentence is ",nb_char);
+    Write("The number of words in the sentence is ",nb_word);
+    Write("he number of vowels in the sentence. is ",nb_vow);
+END
+******************************************************************
+algorithm permutation 
+var x,y,z,:=integer
+begin 
+write("give a value of x and y and z",x , y,z );
+read(x);
+read(y);
+read(z);
+x=y;
+y=z;
+z=x; 
+write("give the value of x  after permutation",x)
+write("give the value of y after permutation",y)
+write("give the value ofz after permutation",z)
+end
+************************************************************
+
+algorithm date
+var date:=integer;
+    jj,mm,aa:=integer;
+begin 
+write("write the date")
+date:=jj/mm/aa;
+read(date);
+end
+
+
+*********task1*****************
+PROCEDURE dot_product(v1,v2 : ARRAY_OF INTEGER, VAR dot : INTEGER)
+VAR
+    i : INTEGER;
+BEGIN
+    dot :=0;
+    i:=0;
+    IF (v1.length <> v2.length) THEN
+        Write("vectors with different sizes we cannot calculat dot product");
+        dot := NaN; 
+    WHILE (i <v1.length ) DO
+        dot := dot + v1[i]*v2[i];
+    END_WHILE
+END
+// 2) 
+ALGORITHM orth_vectors
+VAR
+    v1,v2 : ARRAY_OF INTEGER [50];
+    dot : INTEGER;
+BEGIN
+    // Read Size of elements of V1 
+    n1 := read_size();
+    // Read elements of V1
+    read_array(n1,v1);
+    // Read Size of elements of V2 
+    n2 := read_size();
+    // Read elements of V2
+    read_array(n2,v2);
+    dot_product(v1,v2,dot);
+    IF (dot = 0) THEN
+        Write("V1 and V2 are orthogonal");
+    ELSE
+        Write("V1 and V2 are not orthogonal");
+    END_IF
+END
+
+// 3)
+
+FUNCTION dot_product(v1,v2 : ARRAY_OF INTEGER) : INTEGER
+VAR
+    i, dot : INTEGER;
+BEGIN
+    dot :=0;
+    i:=0;
+    IF (v1.length <> v2.length)
+IF (v1.length <> v2.length) THEN
+        Write("vectors with different sizes we cannot calculat dot product");
+        RETURN NaN; 
+    END_IF
+    WHILE (i <v1.length ) DO
+        dot := dot + v1[i]*v2[i];
+    END_WHILE
+    RETURN dot ;
+END
+
+*****************task2*****************************
+
+ALGORITHM orth_vectors
+VAR
+    v1,v2 : ARRAY_OF INTEGER [50];
+    dot : INTEGER;
+BEGIN
+   
+    n1 := read_size();
+   
+    read_array(n1,v1);
+   
+    n2 := read_size();
+
+    read_array(n2,v2);
+    dot := dot_product(v1,v2);
+    IF (dot = 0) THEN
+        Write("V1 and V2 are orthogonal");
+    ELSE
+        Write("V1 and V2 are not orthogonal");
+    END_IF
+END
+
+********************task3*********************************
+
+ALGORITHM task 3 
+VAR
+tab:ARRAY_OF INTEGER [20];
+i,sum :INTEGER;
+BEGIN
+sum:=0;
+for(i=0 ,i<tab.legnth,i++)
+sum=sum+tab[i];
+    write("sum of the two elements is",sum);
+
+END
+
+ALGORITHM algorithm_name
+ALGORITHM K_unique_characters
+VAR
+    str : STRING[50];
+    k, i, j, count : INTEGER;
+    diff : BOOLEAN;
+    max_start, max_length, curr_start, curr_end : INTEGER := 0;
+    alpha_count : HASH_TABLE<CHAR,INTEGER>;
+    
+BEGIN
+    Read(str);
+    Read(k);
+    count :=0;
+    FOR i FROM 0 TO str.length-1 DO
+        diff := TRUE;
+        FOR j FROM i+1 TO str.length-1 DO
+            IF (str[i] = str[j]) THEN
+                diff := FALSE;
+                BREAK;
+            END_IF
+        END_FOR
+        IF (diff) THEN
+            count := count +1;
+        END_IF
+    END_FOR
+
+    IF (count < k) THEN
+        Write("Not enough unique character is present in the input string");
+    ELSE
+
+    FOR i FROM 0 TO str.length-1  DO
+        IF (alpha_count.lookup(str[i]) = TRUE) THEN
+            count := alpha_count.get(str[i]);
+            alpha_count.insert(str[i],count+1);
+        ELSE
+            alpha_count.insert(str[i],1);
+        END_IF
+        curr_end := curr_end +1;
+Chat
+
+
